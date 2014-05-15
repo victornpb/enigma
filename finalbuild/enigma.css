@@ -1,0 +1,423 @@
+@charset "UTF-8";
+/*
+*  enigma.css  - written by Victor N - 22/Nov/2013 - www.vitim.us
+*/
+
+#enigmaFrame {
+	position: absolute;
+	left: 10px;
+	top: 22px;
+	
+	height: 768px;
+	width: 740px;
+	z-index: 1;
+	
+	background-image:url(enigma.fw.png);
+	background:url(wood_259.jpg);
+	
+	box-shadow: inset 0px 0px 3px black;
+	
+	border-radius: 4px;
+}
+
+#enigmaBoard {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	
+	height: 708px;
+	width: 680px;
+	z-index: 1;
+	
+	background: url(dark_wall.png);
+	
+	box-shadow:
+	
+	inset 0px 2px 2px rgba(255,255,255,0.5),
+	0px -3px 2px rgba(0,0,0,0.5),
+	
+	inset 0px -3px 2px rgba(0,0,0,0.5),
+	0px 3px 2px rgba(255,255,255,0.5),
+	
+	-3px 0px 2px rgba(0,0,0,0.5),
+	3px 0px 2px rgba(0,0,0,0.5);
+	
+	border-radius: 2px;
+	
+}
+
+#encryptionRotors {
+	position: absolute;
+	left: 91px;
+	top: 46px;
+	width: 303px;
+	height: 198px;
+	z-index: 3;
+}
+
+#encKey4, #encKey3, #encKey2, #encKey1{
+	position: absolute;
+	top: 0px;
+	width: 68px;
+	height: 191px;
+}
+#encKey4 {
+	left: 1px;
+}
+#encKey3 {
+	left: 77px;
+}
+#encKey2 {
+	left: 149px;
+}
+#encKey1 {
+	left: 225px;
+}
+
+
+.wheelHandler {
+	position: absolute;
+	left: 53px;
+	top: 8px;
+	width: 10px;
+	height: 169px;
+	z-index: 1;
+}
+
+
+.digitCover {
+	position: absolute;
+	left: 2px;
+	top: 64px;
+	width: 43px;
+	height: 109px;
+	z-index: 2;
+	border-radius: 100%;
+	-border: 1px solid blue;
+	-background-color: #CCC;
+	background-image:url(redox_01.png);
+	box-shadow: inset 1px 1px 1px white, inset -1px -1px 1px black;
+}
+.digitCover .screw:nth-child(1){
+	top: 7px;
+	left: 16px;
+
+}
+.digitCover .screw:nth-child(2){
+	top: 91px;
+	left: 16px;
+
+}
+
+.digitCover div.counter{
+	position: absolute;
+	left: 9px;
+	top: 40px;
+	width: 24px;
+	height: 26px;
+	z-index: 2;
+}
+
+
+
+
+.counter{
+	width: 22px;
+	height: 26px;
+	z-index: 1;
+	
+	border: 2px inset #666;
+}
+.counter .wheel{
+	width: 22px;
+	margin-top: 0px;
+	
+	height: 26px;
+	
+}
+.counter .wheel .digit{
+	-border-top: 1px solid red;
+	-border-bottom: 1px solid blue;
+	
+	font-size: 18px;
+
+	line-height: 26px;
+	height: 26px;
+}
+
+
+#printer {
+	position: absolute;
+	left: 90px;
+	top: 253px;
+	width: 475px;
+	height: 57px;
+	z-index: 4;
+	
+	-overflow: scroll;
+	-text-align: right;
+		
+	z-index: 2;
+	
+	float: right;
+}
+
+#paper{
+	-position: absolute;	
+	-right: 0;
+	
+	-display: inline-block;
+	float: right;
+	
+	-width: 0px;
+	
+	height: 50px;
+	line-height: 50px;	
+	padding-left: 2em;
+	
+	
+	background-color: #FFE;
+	font-family:"Courier New", Courier, monospace;
+	color: #333;
+	box-shadow: 0px 2px 3px black;
+	opacity: 0.9;
+	
+	transition: all linear 500ms;
+}
+
+#paperContent{
+	display:inline-block;
+}
+
+
+/*---- LIGHT BOARD ----*/
+#lightBoard {
+	position: absolute;
+	left: 9px;
+	top: 323px;
+	width: 652px;
+	height: 184px;
+	z-index: 2;
+}
+
+/* Light Panel*/
+.lightBoard{
+	-background-color:#333;
+	
+	margin-top: 25px;
+	margin-left: 30px;
+}
+
+/*Light lines*/
+.lightBoard>div{
+	margin-bottom: 20px;
+}
+
+/*First Line*/
+.lightBoard>div:nth-child(1){
+	padding-left: 16px;
+}
+/*Second Line*/
+.lightBoard>div:nth-child(2){
+	padding-left: 39px;
+}
+/*Third Line*/
+.lightBoard>div:nth-child(3){
+	padding-left: 0px;
+}
+
+/*Light bulbs*/
+.lightBoard > div > div{
+	
+	display:inline-block;
+	width: 36px;
+	height: 39px;
+	
+	margin-left: 12px;
+	margin-right: 18px;
+	
+	border-radius: 30px;
+	text-align:center;
+	
+	background-color: #222;
+	color: rgba(255,255,255,0.5);
+	font-family: Arial Black;
+	font-size:26px;
+	
+	box-shadow: inset 0px 5px 3px rgba(0,0,0,0.5),
+	0px 1px 1px rgba(255,255,255,0.25),
+	0px -1px 2px rgba(255,255,255,0.1);
+	
+	transition: all ease-in-out 150ms;
+}
+
+/*.lightBoard > div > div:hover,*/
+.lightBoard > div > div.on{
+	color:#FF6;
+	text-shadow: 0px 0px 5px #FC0;
+	
+	box-shadow: inset 0px 3px 3px rgba(0,0,0,0.2),
+	0px 1px 1px rgba(255,255,128,0.5),
+	0px -1px 2px rgba(255,255,128,0.1);
+}
+
+
+/*----- KEYBOARD ----*/
+#keyboard {
+	position: absolute;
+	left: 4px;
+	top: 521px;
+	width: 659px;
+	height: 173px;
+	z-index: 1;
+}
+
+.keyboard{
+	display: inline-block;
+	width: auto;
+	height: auto;
+	
+	-background: url(dark_leather.png);
+	-background-color:#666;
+	
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+/*Keyboard lines*/
+.keyboard>div{
+	margin-bottom: 20px;
+}
+
+/*First Line*/
+.keyboard>div:nth-child(1){
+	padding-left: 16px;
+}
+/*Second Line*/
+.keyboard>div:nth-child(2){
+	padding-left: 39px;
+}
+/*Third Line*/
+.keyboard>div:nth-child(3){
+	padding-left: 0px;
+}
+
+/*Keys*/
+.keyboard > div > div{
+	cursor: pointer;
+	position: relative;
+	display:inline-block;
+	width: 36px;
+	height: 39px;
+	
+	margin-left: 12px;
+	margin-right: 18px;
+	
+	border-radius: 30px;
+	text-align:center;
+	
+	background-color: #333;
+	color:#FFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:26px;
+	z-index: 2;
+	
+	border: 3px ridge #ccc;
+	box-sizing:border-box;
+	
+	transition: all ease 50ms;
+	box-shadow: 0px 8px 6px rgba(0,0,0,0.75);
+	
+	/* Unselectable */
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.keyboard > div > div:active,
+.keyboard > div > div.down{
+	top: 6px;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+
+/*---- Screws ----*/
+.screw{
+	position: absolute;
+	width: 11px;
+	height: 11px;
+	
+	border-radius: 100%;
+	background-color: #FFF;
+	box-shadow: inset 1px 2px 1px rgba(0,0,0,0.7),
+				inset -2px -2px 3px rgba(0,0,0,0.4),
+				1px 1px 0px rgba(255,255,255,0.3);
+	overflow:hidden;
+	text-align:center;
+	line-height:9px;
+	color: rgba(0,0,0,0.3);
+}
+
+.screwOut{
+	position: absolute;
+	width: 12px;
+	height: 12px;
+		
+	border-radius: 100%;
+	background-color: #eee;
+	box-shadow: inset 1px 2px 1px rgba(0,0,0,0.7),
+				inset -2px -2px 1px rgba(0,0,0,0.4),
+				inset 2px -2px 0px rgba(0,0,0,0.2),
+				1px 1px 0px rgba(255,255,255,0.3);
+	overflow:hidden;
+	text-align:center;
+	line-height:11px;
+	color: rgba(0,0,0,0.3);
+}
+
+#screw1 {
+	left: 21px;
+	top: 17px;
+}
+#screw2 {
+	left: 628px;
+	top: 22px;
+}
+#screw3 {
+	left: 244px;
+	top: 66px;
+}
+#screw4 {
+	left: 399px;
+	top: 123px;
+}
+#screw5 {
+	left: 23px;
+	top: 168px;
+}
+#screw6 {
+	left: 622px;
+	top: 169px;
+}
+#screw7 {
+	left: 24px;
+	top: 33px;
+}
+#screw8 {
+	left: 631px;
+	top: 36px;
+}
+#screw9 {
+	left: 335px;
+	top: 90px;
+}
+#screw10 {
+	left: 28px;
+	top: 146px;
+}
+#screw11 {
+	left: 625px;
+	top: 150px;
+}

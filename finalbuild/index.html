@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enigma HTML5</title>
+
+<script src="enigma.js" type="text/javascript"></script>
+<script src="keystrokes.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="counter.css" type="text/css">
+<script type="text/javascript" src="counter.js"></script>
+
+<link rel="stylesheet" href="enigma.css" type="text/css">
+<script src="viewController.js" type="text/javascript"></script>
+
+<style type="text/css">
+/* CSS GOES HERE */
+body{
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #D6D6D6
+}
+
+</style>
+</head>
+<body>
+
+<div id="enigmaFrame">
+	<div id="enigmaBoard">
+		
+		<!-- Encryption Digits -->
+		<div id="encryptionRotors">
+			<div id="encKey4">
+				<div class="wheelHandler"></div>
+				<div class="digitCover">
+					<div class="screw">\</div>
+					<div class="screw">|</div>
+					<div id="c4" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+				</div>
+			</div>
+			
+			<div id="encKey3">
+				<div class="wheelHandler"></div>
+				<div class="digitCover">
+					<div class="screw">|</div>
+					<div class="screw">/</div>
+					<div id="c3" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+				</div>
+			</div>
+				
+			<div id="encKey2">
+				<div class="wheelHandler"></div>
+				<div class="digitCover">
+					<div class="screw">/</div>
+					<div class="screw">\</div>
+					<div id="c2" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+				</div>
+			</div>
+			
+			<div id="encKey1">
+				<div class="wheelHandler"></div>
+				<div class="digitCover">
+					<div class="screw">\</div>
+					<div class="screw">/</div>
+					<div id="c1" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="printer">
+			<div id="paper">
+				<span id="paperContent"></span>
+			</div>
+		</div>
+		
+		<!-- Light Board -->
+		<div id="lightBoard">
+			<div class="screwOut" id="screw1">/</div>
+			<div class="screwOut" id="screw2">\</div>
+			<div class="screwOut" id="screw3">|</div>
+			<div class="screwOut" id="screw4">|</div>
+			<div class="screwOut" id="screw5">/</div>
+			<div class="screwOut" id="screw6">\</div>
+			
+			<div class="lightBoard">
+				<div>
+					<div>Q</div><div>W</div><div>E</div><div>R</div><div>T</div><div>Z</div><div>U</div><div>I</div><div>O</div>
+				</div>
+				<div>
+					<div>A</div><div>S</div><div>D</div><div>F</div><div>G</div><div>H</div><div>J</div><div>K</div>
+				</div>
+				<div>
+					<div>P</div><div>Y</div><div>X</div><div>C</div><div>V</div><div>B</div><div>N</div><div>M</div><div>L</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Keyboard -->
+		<div id="keyboard">
+			<div class="screwOut" id="screw7">|</div>
+			<div class="screwOut" id="screw8">\</div>
+			<div class="screwOut" id="screw9">/</div>
+			<div class="screwOut" id="screw10">|</div>
+			<div class="screwOut" id="screw11">\</div>
+			
+			<div class="keyboard">
+				<div>
+					<div>Q</div><div>W</div><div>E</div><div>R</div><div>T</div><div>Z</div><div>U</div><div>I</div><div>O</div>
+				</div>
+				<div>
+					<div>A</div><div>S</div><div>D</div><div>F</div><div>G</div><div>H</div><div>J</div><div>K</div>
+				</div>
+				<div>
+					<div>P</div><div>Y</div><div>X</div><div>C</div><div>V</div><div>B</div><div>N</div><div>M</div><div>L</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 
+TODO:
+
+* backspace function
+* keyboard "stairs" design
+* GUI to change rotors
+* GUI to enable 4th rotor
+* Implement Plugboard model and GUI
+* Geared handle wheel on the right of counter to rotate rotors position
+* Sound effects (I could not be abble to solve the slow delay on Safari and Chrome without swf flash)
+* persistence
+
+-->
+
+</body>
+</html>

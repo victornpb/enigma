@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script src="enigma.js" type="text/javascript"></script>
+<script src="keystrokes.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../AnalogCounterWheel/counter.css" type="text/css" charset="utf-8">
+<script type="text/javascript" src="../AnalogCounterWheel/counter.js"></script>
+
+<style type="text/css">
+
+.panel{
+	display: inline-block;
+	width: auto;
+	height: auto;
+	
+	background: url(dark_wall.png);
+}
+
+.keyboard{
+	display: inline-block;
+	width: auto;
+	height: auto;
+	
+	background: url(dark_leather.png);
+
+	background-color:#666;
+	margin: 20px;
+	padding: 10px;
+}
+/*Keyboard lines*/
+.keyboard>div{
+	margin-bottom: 20px;
+}
+
+/*First Line*/
+.keyboard>div:nth-child(1){
+	padding-left: 16px;
+}
+/*Second Line*/
+.keyboard>div:nth-child(2){
+	padding-left: 39px;
+}
+/*Third Line*/
+.keyboard>div:nth-child(3){
+	padding-left: 0px;
+}
+
+/*Keys*/
+.keyboard > div > div{
+	cursor: pointer;
+	position: relative;
+	display:inline-block;
+	width: 36px;
+	height: 39px;
+	
+	margin-left: 12px;
+	margin-right: 12px;
+	
+	border-radius: 30px;
+	text-align:center;
+	
+	background-color: #333;
+	color:#FFF;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:26px;
+	z-index: 2;
+	
+	border: 3px ridge #ccc;
+	box-sizing:border-box;
+	
+	transition: all ease 50ms;
+	box-shadow: 0px 8px 6px rgba(0,0,0,0.75);
+	
+	/* Unselectable */
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.keyboard > div > div:active,
+.keyboard > div > div.down{
+	top: 6px;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+
+/***********************/
+
+.panel{
+	background-color:#333;
+	
+	margin: 20px;
+	padding: 12px;
+}
+/*Keyboard lines*/
+.panel>div{
+	margin-bottom: 20px;
+}
+
+/*First Line*/
+.panel>div:nth-child(1){
+	padding-left: 16px;
+}
+/*Second Line*/
+.panel>div:nth-child(2){
+	padding-left: 39px;
+}
+/*Third Line*/
+.panel>div:nth-child(3){
+	padding-left: 0px;
+}
+
+/*Keys*/
+.panel > div > div{
+	
+	display:inline-block;
+	width: 36px;
+	height: 39px;
+	
+	margin-left: 12px;
+	margin-right: 12px;
+	
+	border-radius: 30px;
+	text-align:center;
+	
+	background-color: #222;
+	color: rgba(255,255,255,0.5);
+	font-family: Arial Black;
+	font-size:26px;
+	
+	box-shadow: inset 0px 5px 3px rgba(0,0,0,0.5),
+	0px 1px 1px rgba(255,255,255,0.25),
+	0px -1px 2px rgba(255,255,255,0.1);
+	
+	transition: all ease-in-out 150ms;
+}
+
+.panel > div > div:hover,
+.panel > div > div.on{
+	color:#FF6;
+	text-shadow: 0px 0px 5px #FC0;
+	
+	box-shadow: inset 0px 3px 3px rgba(0,0,0,0.2),
+	0px 1px 1px rgba(255,255,128,0.5),
+	0px -1px 2px rgba(255,255,128,0.1);
+	
+}
+
+body{
+	color:#999;
+	background:url(bedge_grunge.png);
+}
+
+
+#apDiv1 {
+	position: absolute;
+	left: 19px;
+	top: 50px;
+	width: 700px;
+	height: 600px;
+	z-index: 3;
+	
+	background:url(wood_259.jpg);
+	
+	-webkit-perspective: 500px;
+	-moz-perspective: 500px;
+	-o-perspective: 500px;
+	-ms-perspective: 500px;
+	perspective: 500px;
+	-webkit-perspective-origin: 50%, 50%;
+	-moz-perspective-origin: 50%, 50%;
+	-o-perspective-origin: 50%, 50%;
+	-ms-perspective-origin: 50%, 50%;
+	perspective-origin: 50%, 50%;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	-moz-transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	-o-transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	-ms-transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+	transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+}
+
+#apDiv2 {
+	position: absolute;
+	left: 9px;
+	top: 100px;
+	width: 700px;
+	height: 600px;
+	z-index: 1;
+}
+
+#apDiv3 {
+	position: absolute;
+	left: 35px;
+	top: 15px;
+	width: 623px;
+	height: 200px;
+	z-index: 3;
+}
+
+
+.counter{
+	width: 20px;
+	height: 30px;
+	z-index: 1;
+	
+	border: 2px inset #666;
+}
+.counter .wheel{
+	width: 20px;
+	margin-top: 5px;
+	
+	height: 30px;
+	
+}
+.counter .wheel .digit{
+	-border-top: 1px solid red;
+	-border-bottom: 1px solid blue;
+	
+	font-size: 15px;
+
+	line-height: 20px;
+	height: 20px;
+}
+
+#paper {
+	position: absolute;
+	left: 741px;
+	top: 50px;
+	width: 265px;
+	height: 502px;
+	z-index: 4;
+	
+	padding: 2em;
+	
+	background-color: #FFF;
+	color: #666;
+	
+	overflow:scroll;
+}
+</style></head>
+
+<body>
+
+<div id="apDiv1">
+	
+		<div id="apDiv3">
+			<div id="c3" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+			<div id="c2" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+			<div id="c1" class="counter">A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z</div>
+		</div>
+
+	
+	<div id="apDiv2">
+	<div class="panel">
+<div>
+	<div>Q</div><div>W</div><div>E</div><div>R</div><div>T</div><div>Z</div><div>U</div><div>I</div><div>O</div>
+</div>
+<div>
+	<div>A</div><div>S</div><div>D</div><div>F</div><div>G</div><div>H</div><div>J</div><div>K</div>
+</div>
+<div>
+	<div>P</div><div>Y</div><div>X</div><div>C</div><div>V</div><div>B</div><div>N</div><div>M</div><div>L</div>
+</div>
+</div>
+
+
+
+<div class="keyboard">
+<div>
+	<div>Q</div><div>W</div><div>E</div><div>R</div><div>T</div><div>Z</div><div>U</div><div>I</div><div>O</div>
+</div>
+<div>
+	<div>A</div><div>S</div><div>D</div><div>F</div><div>G</div><div>H</div><div>J</div><div>K</div>
+</div>
+<div>
+	<div>P</div><div>Y</div><div>X</div><div>C</div><div>V</div><div>B</div><div>N</div><div>M</div><div>L</div>
+</div>
+</div>
+
+	</div>
+</div>
+
+
+
+
+<div id="paper"></div>
+
+<script type="text/javascript">
+/* JAVASCRIPT GOES HERE */
+window.onload=function(){
+	
+	addEvent(document.body,"keyup",keyEvent);
+	addEvent(document.body,"keydown",keyEvent);
+
+	addEvent(document.querySelector('.keyboard'), "mousedown", mouseEvent);
+	addEvent(document.querySelector('.keyboard'), "mouseup", mouseEvent);
+	
+	counter1 = new Counter(c1);
+	counter2 = new Counter(c2);
+	counter3 = new Counter(c3);
+	
+	counter1.onChange = function(pos){
+		Enigma.rotors[0].pos = pos;
+	}
+	counter2.onChange = function(pos){
+		Enigma.rotors[1].pos = pos;
+	}
+	counter3.onChange = function(pos){
+		Enigma.rotors[2].pos = pos;
+	}
+
+};
+
+var lastKeyEvent;
+function keyEvent(e){
+	var evt = window.event ? window.event : e;
+	var keyCode = evt.keyCode ? evt.keyCode : e.which;
+	
+	var state = evt.type=='keydown'?"down":"up";
+	
+	if(lastKeyEvent!=state)
+	if(keyCode>=65 && keyCode<=90){
+		lastKeyEvent=state;
+		var char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(keyCode-65);
+		work(char, state);
+		console.log(char, state);
+	}
+}
+
+var lastClick;
+function mouseEvent(e){
+	var evt = window.event ? window.event : e;
+	//var keyCode = evt.keyCode ? evt.keyCode : e.which;
+	console.log(evt);
+	
+	var state = evt.type=='mousedown'?"down":"up";
+	var char = e.target.innerHTML;
+		
+	if(/^[A-Z]$/.test(char)){
+		
+		if(state=="down"){
+			lastClick = Date.now();
+			work(char, state);
+			console.log(char, state);
+		}
+		else{
+			console.log(Date.now()-lastClick)
+			if(Date.now()-lastClick>50){
+				work(char, state);
+			}
+			else setTimeout(function(){ work(char,'up')}, 1500);
+		}
+	}
+}
+
+
+var previousLight;
+function work(char, state){
+	
+	if(state=='down'){
+		simulateKey(char, state);
+		var newChar = Enigma.encode(char);
+		
+		simulateLight(newChar, 1);
+		previousLight = newChar;
+		
+		paper.innerHTML+=newChar;
+	}
+	else{
+		simulateKey(char, 0);
+		simulateLight(previousLight, 0);
+		
+		counter1.moveTo(Enigma.rotors[0].pos);
+		counter2.moveTo(Enigma.rotors[1].pos);
+		counter3.moveTo(Enigma.rotors[2].pos);
+	}
+}
+
+
+function simulateKey(char, state){
+	var keys = document.querySelectorAll(".keyboard div")
+	for(var i=0; i<keys.length; i++){
+		
+		if(keys[i].innerHTML==char){
+			if(state)
+				keys[i].classList.add('down');
+			else
+				keys[i].classList.remove('down');
+		}
+	}
+}
+
+function simulateLight(char, state){
+	var keys = document.querySelectorAll(".panel div")
+	for(var i=0; i<keys.length; i++){
+		
+		if(keys[i].innerHTML==char){
+			if(state)
+				keys[i].classList.add('on');
+			else
+				keys[i].classList.remove('on');
+		}
+	}
+}
+
+
+
+</script>
+  
+</body>
+</html>
